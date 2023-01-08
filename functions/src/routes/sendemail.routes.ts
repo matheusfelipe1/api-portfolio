@@ -8,8 +8,8 @@ export class SendEmailRouter {
 
     public router(app: Application) {
 
-        app.options('/v1/sendEmail');
-        app.post('/v1/sendEmail', cors(), (req: Request, res: Response) => {
+        app.options('/v1/sendEmailV1');
+        app.post('/v1/sendEmailV1', cors(), (req: Request, res: Response) => {
             this.controller.post(req, res);
         });
     }
