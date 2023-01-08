@@ -10,7 +10,6 @@ export class SendEmailController {
     public post(req: Request, res: Response) {
         if (req.body && req.body.name && req.body.text && req.body.email) {
             const data: EmailModel = req.body;
-            console.log(data)
             this.service.post(data).then((result: any) => {
                 successResponse('E-mail enviado com sucesso!', req.body, res)
             }).catch((err: any) => {

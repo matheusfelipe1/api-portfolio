@@ -5,16 +5,19 @@ export class SendEmailService {
 
 
     async post(data: EmailModel) {
-        console.log(data)
         const mailOptions = {
-            from: Enviroments.DATA_EMAIL.auth.user,
-            to: [Enviroments.DATA_EMAIL.auth.user, data.email],
+            from: `${data.name} <${data.email}>`,
+            to: Enviroments.DATA_EMAIL.auth.user,
             subject: Enviroments.data.subject,
-            html: data.text
+            cc: data.email,
+            html: `<p>${data.text}</p>
+                <footer>
+                    <p>${data.email}</p>
+                </footer>
+                `
         };
 
         const transporter = await nodemailer.createTransport(Enviroments.DATA_EMAIL);
-
         // await transporter.sendMail(mailOptions);
         const info = await transporter.sendMail(mailOptions);
         console.log("Mailer Info: ", info);

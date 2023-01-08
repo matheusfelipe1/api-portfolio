@@ -11,9 +11,10 @@ export const Enviroments = {
         tls:{
             rejectUnauthorized: false
         },
+        
         auth: {
-            user: "matheusfel13@gmail.com",
-            pass: "Omgksyhd",
+            user: "mmaathh13@gmail.com",
+            pass: "yiavrzbphrweyqsa",
         },
     }
 
